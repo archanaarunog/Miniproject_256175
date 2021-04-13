@@ -6,13 +6,10 @@
 * A stable system is designed so as to get the desired response of the system without any intolerable variation with the changes in the system parameters.
 * Generally, a system is said to be stable when the poles of the transfer function of the system are located on the left side of the s-plane.
 * Routh-Hurwitz Stability Criterion offers an easy method of predicting the system’s stability without completely solving the characteristic equation.
-## RESEARCH
-## A routh hurwitz table 
-
 
 ![image](https://user-images.githubusercontent.com/68493803/114501171-1262ad80-9c47-11eb-9a25-0ed862d76f1c.png)
 
-
+## RESEARCH
 
 
 ## COST AND FEATURES 
@@ -20,7 +17,7 @@
 
 
 ## DEFINING SYSTEM 
-* input the ce from user
+* input the characteristic equation from user
 * menu contains following: display steps, answer directly, description which case 
 
 ## SWOT ANALYSIS 

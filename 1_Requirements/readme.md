@@ -7,20 +7,16 @@
 * Generally, a system is said to be stable when the poles of the transfer function of the system are located on the left side of the s-plane.
 * Routh-Hurwitz Stability Criterion offers an easy method of predicting the system’s stability without completely solving the characteristic equation.
 
-![image](https://user-images.githubusercontent.com/68493803/114501171-1262ad80-9c47-11eb-9a25-0ed862d76f1c.png)
-
 ![image](https://user-images.githubusercontent.com/68493803/114610307-5ee8d000-9cbd-11eb-94b5-5929d550ed3b.png "Routh-Hurwitz criteria")
 
-## RESEARCH
+## FEATURES 
 
-
-## COST AND FEATURES 
 
 
 
 ## DEFINING SYSTEM 
-* input the characteristic equation from user
-* menu contains following: display steps, answer directly, description which case 
+* Input the characteristic equation from user
+* Display the Routh array and whether system stable or not along with number of poles on the right half s plane
 
 ## SWOT ANALYSIS 
 
@@ -29,16 +25,18 @@
 ## 4W's AND 1'H
 
 
+
 ## DETAIL REQUIREMENTS 
 ### High level requirements
-* The degree of the polynomial
-* The characteristic Equation coefficients 
+|Feature|Status|
+|Degree of polynomial| Implemented|
+|Characteristic Equation coefficients | Implemented|
 
 ### Low level requirements
-* Routh-Hurwitz matrix
-* Check sign changes in matrix 
-#### Check for the special cases :
-1. First column element is zero and remaining are non-zero 
-2. Complete row of zeroes 
-
+|Feature|Status|
+|Routh-Hurwitz matrix| Implemented|
+|Check for the special cases | Implemented|
+|First column element zero| Implemented|
+|Complete row of zeroes | Implemented|
+|Check sign changes matrix | Implemented|
 

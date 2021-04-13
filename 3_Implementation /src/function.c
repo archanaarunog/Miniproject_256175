@@ -1,10 +1,9 @@
 #include<function.h>
-
 /**
- * @brief Function to return array using pointers
+ * @brief Function to store characteristic equation in array
  * 
  * @param n Degree of the polynomial
- * @param char_eqn Pointer array to store the characteristic equation
+ * @param char_eqn Array to store the characteristic equation returned through pointer 
  * @return double* Return the characteristic equation array by its address 
  */
 double *charact_eqn(int n, double *char_eqn)
@@ -17,7 +16,14 @@ double *charact_eqn(int n, double *char_eqn)
     }
     return char_eqn;
 }
-
+/**
+ * @brief Create a routh array matrix and initialise all values to zero
+ * 
+ * @param m Number of columns in routh_array matrix
+ * @param size Number of rows in routh_array matrix
+ * @param routh_array The 2 dimensional matrix ie routh_array
+ * @return double Initialised routh_array matrix
+ */
 double initialize_routh_array(int m,int size, double *routh_array) 
 {
     int i,j;
@@ -28,6 +34,15 @@ double initialize_routh_array(int m,int size, double *routh_array)
 
 
 }
+/**
+ * @brief Store the first two rows with the co-efficients from the characteristic equation
+ * 
+ * @param m Number of columns in routh_array matrix
+ * @param size Number of rows in routh_array matrix
+ * @param routh_array The 2 dimensional matrix ie routh_array
+ * @param ptr_to_charact_eqn Points to the first element of the charcateristic equation address
+ * @return double Routh_array with co-efficients filled in
+ */
 
 double initialize_two_rows(int m, int size, double *routh_array, double * ptr_to_charact_eqn)
 {
@@ -41,6 +56,15 @@ double initialize_two_rows(int m, int size, double *routh_array, double * ptr_to
     }
     
 }
+/**
+ * @brief Find the entire routh_array matrix and checking the special cases 
+ * case 1: entire row is zero, replace with derivative and proceed 
+ * case 2: first element in column zero 
+ * @param m Number of columns in routh_array matrix
+ * @param size Number of rows in routh_array matrix
+ * @param routh_array The 2 dimensional matrix ie routh_array
+ * @return double routh_array fully calculated
+ */
 
 double build_routh_array(int m, int size, double *routh_array)
 {
@@ -79,9 +103,13 @@ double build_routh_array(int m, int size, double *routh_array)
         }
     }
 }
-
-
-
+/**
+ * @brief Displaying the routh_array
+ * @param m Number of columns in routh_array matrix
+ * @param size Number of rows in routh_array matrix
+ * @param routh_array The 2 dimensional matrix ie routh_array
+ * @return double 
+ */
 double print_routh_array(int m, int size, double *routh_array)
 {
         int i,j;
@@ -93,7 +121,14 @@ double print_routh_array(int m, int size, double *routh_array)
         printf("]\n");
     }
 }
-
+/**
+ * @brief  Finding stability by checking for sign changes in the first column 
+ *  Number of sign changes = number of poles lying on the right half of the s plane and hence system unstable
+ * @param m Number of columns in routh_array matrix
+ * @param size Number of rows in routh_array matrix
+ * @param routh_array The 2 dimensional matrix ie routh_array
+ * @return double 
+ */
 
 double check_criteria(int m,int size, double* routh_array)
 {
@@ -117,13 +152,19 @@ double check_criteria(int m,int size, double* routh_array)
     if(changes>0)
     {
     printf("\nSystem unstable\n");
-    printf("Sign changes present = %d \n", changes);
+    printf("Number of poles present on the right half of s plane = %d \n", changes);
     }
     else
     printf("\nSystem is stable\n");
 
 }
-
+/**
+ * @brief Creating routh_array matrix step wise by calling other functions 
+ * Initialize all elements to zero->fill first two rows with co-efficients from char_eqn->find rest of the elements->printf matrix->check sign changes
+ * @param ptr_to_charact_eqn Points to the first element of characteristic equation address
+ * @param size The degree of the characteristic equation 
+ * @return int 
+ */
 int routh_hurwitz_function(double *ptr_to_charact_eqn, int size)
 {
     int m = (size / 2) + 1;

@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<function.h>
+
 /**
  * @brief Function to return array using pointers
  * 
@@ -114,15 +114,20 @@ double check_criteria(int m,int size, double* routh_array)
                 prev_sign = 0; //negative
         }
     }
-    printf("\n Sign changes %d \n", changes);
+    if(changes>0)
+    {
+    printf("\nSystem unstable\n");
+    printf("Sign changes present = %d \n", changes);
+    }
+    else
+    printf("\nSystem is stable\n");
+
 }
 
-
-int function(double *ptr_to_charact_eqn, int choice, int size)
+int routh_hurwitz_function(double *ptr_to_charact_eqn, int size)
 {
     int m = (size / 2) + 1;
     double routh_array[size + 1][m];
-    if(choice==2)
     printf("\nROUTH ARRAY SIZE=%dX%d\n", size + 1, m);
     int i, j;
     double *ptr_to_routh=&routh_array[0][0];
@@ -131,27 +136,5 @@ int function(double *ptr_to_charact_eqn, int choice, int size)
     build_routh_array(m,size, ptr_to_routh);
     print_routh_array(m,size,ptr_to_routh);
     check_criteria(m,size,ptr_to_routh);
-}
-
-
-
-/**
- * @brief Main function 
- * 
- * @return int 
- */
-int main()
-{
-    int n, i, choice;
-    printf("Enter the degree of the polynomial(3-20) \n");
-    scanf("%d", &n);
-    double char_eqn[n];
-    double *ptr_to_charact_eqn = charact_eqn(n, char_eqn);
-    for (i = 0; i <= n; i++)
-        printf("%lf\n", *(ptr_to_charact_eqn + i));
-
-    printf("To display output press 1\nTo display routh array press 2\n");
-    scanf("%d", &choice);
-    function(ptr_to_charact_eqn, choice, n);
     return 0;
 }

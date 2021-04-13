@@ -33,15 +33,38 @@ int function(double *ptr, int choice,int size)
 	    det[1][j]=*(ptr+(i++));
 	
          }
-
+         int zero_row;
 	// fill up subsequent rows
        for(i=2;i<=size;i++)
+        {
+       // check if the previous row is zeros
+        zero_row=1;
+        double power=0;
+        for(j=0;j<(m-1);j++)
+         {
+           if(det[i-1][j]!=0)
+              {zero_row=0; break;}
+         }
+         printf("ZERO ROW=%d\n",zero_row);
+        if(zero_row==1)
+        // if the row is zero then find derivative
+       {
+         power=(size-(i-2));
+        for(j=0;j<(m-1);j++)
+         { 
+           det[i-1][j]=power*det[i-2][j];
+           power=power-2;
+         }
+       }
         for(j=0;j<(m-1);j++)
 
 	{
+             if(det[i-1][j]==0 && j==0) //first term of column zero
+              det[i-1][j]=0.0001;
              if (det[i-1][j]!=0)
              det[i][j]= ((det[i-1][j]*det[i-2][j+1])-(det[i-2][j]*det[i-1][j+1]))/det[i-1][j];
 	
+         }
          }
 
      for(i=0;i<(size+1);i++)
@@ -69,7 +92,7 @@ int function(double *ptr, int choice,int size)
 	prev_sign=0;  //negative          
      }
 }
-   printf("\n Sign changes %d",changes);
+   printf("\n Sign changes %d \n",changes);
 
     
 }

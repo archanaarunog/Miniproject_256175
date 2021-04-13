@@ -41,6 +41,83 @@ double initialize_two_rows(int m, int size, double *routh_array, double * ptr_to
     }
     
 }
+
+double build_routh_array(int m, int size, double *routh_array)
+{
+    int zero_row,i,j;
+    // fill up subsequent rows
+    for (i = 2; i <= size; i++)
+    {
+        // check if the previous row is zeros
+        zero_row = 1;
+        double power = 0;
+        for (j = 0; j < (m - 1); j++)
+        {
+            if (*(routh_array+(i-1)*m + j) != 0)
+            {
+                zero_row = 0;
+                break;
+            }
+        }
+        if (zero_row == 1)
+        // if the row is zero then find derivative
+        {
+            power = (size - (i - 2));
+            for (j = 0; j < (m - 1); j++)
+            {
+                *(routh_array+(i-1)*m + j) = power * (*(routh_array+(i-1)*m + j));
+                power = power - 2;
+            }
+        }
+                for (j = 0; j < (m - 1); j++)
+
+        {
+            if (*(routh_array+(i-1)*m + j) == 0 && j == 0) //first term of column zero
+                *(routh_array+(i-1)*m + j) = 0.0001;
+            if (*(routh_array+(i-1)*m + j) != 0)
+               *(routh_array+(i*m) + j) = ((*(routh_array+(i-1)*m + j) * (*(routh_array+(i-2)*m + j+1))) - ((*(routh_array+(i-2)*m + j)) * (*(routh_array+(i-1)*m + j+1))))/ (*(routh_array+(i-1)*m + j));
+        }
+    }
+}
+
+
+
+double print_routh_array(int m, int size, double *routh_array)
+{
+        int i,j;
+    for (i = 0; i < (size + 1); i++)
+    {
+        printf("\n[\t");
+        for (j = 0; j < m; j++)
+            printf("%lf\t", *(routh_array + i*m + j));
+        printf("]\n");
+    }
+}
+
+
+double check_criteria(int m,int size, double* routh_array)
+{
+    //Check for sign changes in the first column
+    int prev_sign = 0, changes = 0, cur_sign = 0,i;
+    if (*(routh_array) > 0)
+        prev_sign = 1; //positive
+    else
+        prev_sign = 0; //negative
+    for (i = 1; i < (size + 1); i++)
+    {
+        if ((*(routh_array+i*m) > 0 && prev_sign == 0) || (*(routh_array+i*m) < 0) && prev_sign == 1)
+        {
+            changes++;
+            if (*(routh_array+i*m) > 0)
+                prev_sign = 1; //positive
+            else
+                prev_sign = 0; //negative
+        }
+    }
+    printf("\n Sign changes %d \n", changes);
+}
+
+
 int function(double *ptr_to_charact_eqn, int choice, int size)
 {
     int m = (size / 2) + 1;
@@ -51,71 +128,12 @@ int function(double *ptr_to_charact_eqn, int choice, int size)
     double *ptr_to_routh=&routh_array[0][0];
     initialize_routh_array(m, size, ptr_to_routh); 
     initialize_two_rows(m,size, ptr_to_routh, ptr_to_charact_eqn);
-    
-   
-    int zero_row;
-    // fill up subsequent rows
-    for (i = 2; i <= size; i++)
-    {
-        // check if the previous row is zeros
-        zero_row = 1;
-        double power = 0;
-        for (j = 0; j < (m - 1); j++)
-        {
-            if (routh_array[i - 1][j] != 0)
-            {
-                zero_row = 0;
-                break;
-            }
-        }
-        printf("ZERO ROW=%d\n", zero_row);
-        if (zero_row == 1)
-        // if the row is zero then find derivative
-        {
-            power = (size - (i - 2));
-            for (j = 0; j < (m - 1); j++)
-            {
-                routh_array[i - 1][j] = power * routh_array[i - 2][j];
-                power = power - 2;
-            }
-        }
-        for (j = 0; j < (m - 1); j++)
-
-        {
-            if (routh_array[i - 1][j] == 0 && j == 0) //first term of column zero
-                routh_array[i - 1][j] = 0.0001;
-            if (routh_array[i - 1][j] != 0)
-                routh_array[i][j] = ((routh_array[i - 1][j] * routh_array[i - 2][j + 1]) - (routh_array[i - 2][j] * routh_array[i - 1][j + 1])) / routh_array[i - 1][j];
-        }
-    }
-
-    for (i = 0; i < (size + 1); i++)
-    {
-        printf("\n[");
-        for (j = 0; j < m; j++)
-            printf("%lf\t", routh_array[i][j]);
-        printf("]\n");
-    }
-
-    //Check for sign changes in the first column
-    int prev_sign = 0, changes = 0, cur_sign = 0;
-    if (routh_array[0][0] > 0)
-        prev_sign = 1; //positive
-    else
-        prev_sign = 0; //negative
-    for (i = 1; i < (size + 1); i++)
-    {
-        if ((routh_array[i][0] > 0 && prev_sign == 0) || (routh_array[i][0] < 0) && prev_sign == 1)
-        {
-            changes++;
-            if (routh_array[i][0] > 0)
-                prev_sign = 1; //positive
-            else
-                prev_sign = 0; //negative
-        }
-    }
-    printf("\n Sign changes %d \n", changes);
+    build_routh_array(m,size, ptr_to_routh);
+    print_routh_array(m,size,ptr_to_routh);
+    check_criteria(m,size,ptr_to_routh);
 }
+
+
 
 /**
  * @brief Main function 

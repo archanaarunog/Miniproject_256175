@@ -31,8 +31,8 @@
 * It is applicable only when there is a characteristic equation having real coefficients.
 
 ### Opportunities
-* this is a faster and efficient method for determining stability alone 
-* using this method, the range of k values to make an unstable system stable can be determined 
+* This is a faster and efficient method for determining stability alone 
+* Using this method, the range of k values to make an unstable system stable can be determined 
 
 ### Threats
 * 
@@ -46,10 +46,9 @@
 * The characteristic Equation coefficients 
 
 ### Low level requirements
-* Create the routh array with the co-efficient of the characteristic equation coefficient initiallised into a matrix 
-* Find each matrix elements by using the formula 
-* Check for sign changes in the first column
-#### * Check for the special cases :
+* Routh-Hurwitz matrix
+* Check sign changes in matrix 
+#### Check for the special cases :
 1. First column element is zero and remaining are non-zero 
 2. Complete row of zeroes 
 

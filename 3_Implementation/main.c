@@ -41,7 +41,7 @@ int function(double *ptr, int choice,int size)
             }
             else
             {
-                det[i][j]= ((det[i-1][j]*det[j][i-1])-(det[i-2][j]*det[i-1][j+1]))/det[i-1][j];
+                 det[i][j]= ((det[i-1][0]*det[i-2][j+1])-(det[i-2][j-1]*det[i-1][j+1]))/det[i-1][0];
 
             }
         }

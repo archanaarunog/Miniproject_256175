@@ -9,7 +9,10 @@
 ## RESEARCH
 ## A routh hurwitz table 
 
-(![image](https://user-images.githubusercontent.com/68493803/114500973-b5ff8e00-9c46-11eb-892b-5d9b944187d6.png)
+
+![image](https://user-images.githubusercontent.com/68493803/114501171-1262ad80-9c47-11eb-9a25-0ed862d76f1c.png)
+
+
 
 
 ## COST AND FEATURES 

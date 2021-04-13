@@ -43,6 +43,7 @@ https://slideplayer.com/slide/5374822/17/images/5/The+Routh-Hurwitz+Stability+Cr
 ### Opportunities
 * This is a faster and efficient method for determining stability alone 
 * Using this method, the range of k values to make an unstable system stable can be determined 
+* The number of poles lying on the right half of s plane can be found 
 
 ### Threats
 * 

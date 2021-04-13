@@ -29,15 +29,15 @@ double initialize_routh_array(int m,int size, double *routh_array)
 
 }
 
-double initialize_two_rows(int m, int size, double *routh_array)
+double initialize_two_rows(int m, int size, double *routh_array, double * ptr_to_charact_eqn)
 {
      // fill up the first two rows
-    
-    for (j = 0, i = 0; (j < m) && (i <= size); j++)
+    int i,j;
+    for (j = 0, i = 0; (j < m) && (i <= size); j++,i++)
     {
-        routh_array[0][j] = *(ptr_to_charact_eqn + (i++));
+        *(routh_array+j) = *(ptr_to_charact_eqn++);
         if (i <= size)
-            routh_array[1][j] = *(ptr_to_charact_eqn + (i++));
+            *(routh_array+m+j) = *(ptr_to_charact_eqn++);
     }
     
 }
@@ -50,7 +50,7 @@ int function(double *ptr_to_charact_eqn, int choice, int size)
     int i, j;
     double *ptr_to_routh=&routh_array[0][0];
     initialize_routh_array(m, size, ptr_to_routh); 
-    initialize_two_rows(m,size, ptr_to_routh);
+    initialize_two_rows(m,size, ptr_to_routh, ptr_to_charact_eqn);
     
    
     int zero_row;

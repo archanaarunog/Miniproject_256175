@@ -24,7 +24,7 @@ double initialize_routh_array(int m,int size, double *routh_array)
 
     for (i = 0; i < (size + 1); i++)
         for (j = 0; j < m; j++)
-            routh_array[i][j] = 0;
+            *(routh_array++) = 0;
 
 
 }
@@ -34,7 +34,8 @@ int function(double *ptr_to_charact_eqn, int choice, int size)
     double routh_array[size + 1][m];
     printf("\nROUTH ARRAY SIZE=%dX%d\n", size + 1, m);
     int i, j;
-    initialize_routh_array(m, size, routh_array); 
+    double *ptr_ra=&routh_array[0][0];
+    initialize_routh_array(m, size, ptr_ra); 
     
     // fill up the first two rows
     i = 0;

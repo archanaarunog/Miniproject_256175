@@ -7,7 +7,9 @@
 * Generally, a system is said to be stable when the poles of the transfer function of the system are located on the left side of the s-plane.
 * Routh-Hurwitz Stability Criterion offers an easy method of predicting the system’s stability without completely solving the characteristic equation.
 ## RESEARCH
-1.
+A routh hurwitz table 
+
+![alt text](https://www.google.com/imgres?imgurl=x-raw-image%3A%2F%2F%2F5c8f090c43f27c655d2ac4fa9ac8bfd0b9602206ea225695cc9bd6c7e516dadf&imgrefurl=http%3A%2F%2Fabl.gtu.edu.tr%2Fhebe%2FAblDrive%2F70976026%2Fw%2FStorage%2F102_2010_2_322_70976026%2FDownloads%2Fweek5.pdf&tbnid=ZXzyQwwJj1wVaM&vet=10CBYQxiAoA2oXChMIkKCtxrv67wIVAAAAAB0AAAAAEAc..i&docid=N0xAQ0jgY-ldBM&w=1253&h=907&itg=1&q=routh%20hurwitz%20calculator&hl=en&safe=active&ved=0CBYQxiAoA2oXChMIkKCtxrv67wIVAAAAAB0AAAAAEAc)
 
 ## COST AND FEATURES 
 

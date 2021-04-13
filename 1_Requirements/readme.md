@@ -28,25 +28,8 @@ https://slideplayer.com/slide/5374822/17/images/5/The+Routh-Hurwitz+Stability+Cr
 * menu contains following: display steps, answer directly, description which case 
 
 ## SWOT ANALYSIS 
-### Strength 
-* provides ease of determining the relative stability of the system.
-* time to calculate determinants is saved by the Routh-Hurwitz criterion.
-* the system is unstable then we can easily get the number of roots of the characteristic equation that has a positive real part.
-* using this we can get the range of values of K.
 
-### Weaknesses
-* polynomials with degree greater than 10 are not within the scope of this code
-* It determines the stability but does not offer the method to stabilize an unstable system.
-* This method suits checking the stability of only linear systems.
-* It is applicable only when there is a characteristic equation having real coefficients.
-
-### Opportunities
-* This is a faster and efficient method for determining stability alone 
-* Using this method, the range of k values to make an unstable system stable can be determined 
-* The number of poles lying on the right half of s plane can be found 
-
-### Threats
-* 
+![provides ease of determining the relative stability of the system  time to calculate determinants is saved by the Routh-Hurwitz criterion  the system is unstable then we can easily get the number of roots of the char](https://user-images.githubusercontent.com/68493803/114508380-e8fb4f00-9c51-11eb-9ca1-80b9a87a9bd0.png)
 
 ## 4W's AND 1'H
 

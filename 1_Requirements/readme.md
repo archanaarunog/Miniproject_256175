@@ -29,11 +29,13 @@
 ## DETAIL REQUIREMENTS 
 ### High level requirements
 |Feature|Status|
+|---|---|
 |Degree of polynomial| Implemented|
 |Characteristic Equation coefficients | Implemented|
 
 ### Low level requirements
 |Feature|Status|
+|---|---|
 |Routh-Hurwitz matrix| Implemented|
 |Check for the special cases | Implemented|
 |First column element zero| Implemented|

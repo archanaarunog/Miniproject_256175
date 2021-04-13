@@ -21,7 +21,7 @@
 ### Strength 
 * provides ease of determining the relative stability of the system.
 * time to calculate determinants is saved by the Routh-Hurwitz criterion.
-* * the system is unstable then we can easily get the number of roots of the characteristic equation that has a positive real part.
+* the system is unstable then we can easily get the number of roots of the characteristic equation that has a positive real part.
 * using this we can get the range of values of K.
 
 ### Weaknesses
@@ -42,7 +42,15 @@
 
 ## DETAIL REQUIREMENTS 
 ### High level requirements
+* The degree of the polynomial
+* The characteristic Equation coefficients 
 
 ### Low level requirements
+* Create the routh array with the co-efficient of the characteristic equation coefficient initiallised into a matrix 
+* Find each matrix elements by using the formula 
+* Check for sign changes in the first column
+* Check for the special cases :
+1. First column element is zero and remaining are non-zero 
+2. Complete row of zeroes 
 
 

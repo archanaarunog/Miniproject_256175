@@ -28,23 +28,31 @@ double initialize_routh_array(int m,int size, double *routh_array)
 
 
 }
-int function(double *ptr_to_charact_eqn, int choice, int size)
+
+double initialize_two_rows(int m, int size, double *routh_array)
 {
-    int m = (size / 2) + 1;
-    double routh_array[size + 1][m];
-    printf("\nROUTH ARRAY SIZE=%dX%d\n", size + 1, m);
-    int i, j;
-    double *ptr_ra=&routh_array[0][0];
-    initialize_routh_array(m, size, ptr_ra); 
+     // fill up the first two rows
     
-    // fill up the first two rows
-    i = 0;
     for (j = 0, i = 0; (j < m) && (i <= size); j++)
     {
         routh_array[0][j] = *(ptr_to_charact_eqn + (i++));
         if (i <= size)
             routh_array[1][j] = *(ptr_to_charact_eqn + (i++));
     }
+    
+}
+int function(double *ptr_to_charact_eqn, int choice, int size)
+{
+    int m = (size / 2) + 1;
+    double routh_array[size + 1][m];
+    if(choice==2)
+    printf("\nROUTH ARRAY SIZE=%dX%d\n", size + 1, m);
+    int i, j;
+    double *ptr_to_routh=&routh_array[0][0];
+    initialize_routh_array(m, size, ptr_to_routh); 
+    initialize_two_rows(m,size, ptr_to_routh);
+    
+   
     int zero_row;
     // fill up subsequent rows
     for (i = 2; i <= size; i++)

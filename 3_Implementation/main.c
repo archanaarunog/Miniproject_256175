@@ -26,7 +26,7 @@ int function(double *ptr, int choice,int size)
                 printf("%d det %d\n",i,j);
             }
             else
-            det[i][j]=*(ptr++); printf("%d  ptr %d\n",i,j);
+            det[i][j]=*(ptr++); printf("%d  ptr %d  %lf\n",i,j,det[i][j]);
         }
     }
     int lim=size;
@@ -34,7 +34,7 @@ int function(double *ptr, int choice,int size)
     {
         for(j=0;j<m;j++)
         {
-            if(i<=lim)
+            if(i>=lim)
             {
             det[i][j]=0;    
             lim--;

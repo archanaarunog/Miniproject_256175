@@ -49,7 +49,7 @@
 * Create the routh array with the co-efficient of the characteristic equation coefficient initiallised into a matrix 
 * Find each matrix elements by using the formula 
 * Check for sign changes in the first column
-* Check for the special cases :
+#### * Check for the special cases :
 1. First column element is zero and remaining are non-zero 
 2. Complete row of zeroes 
 

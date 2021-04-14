@@ -36,4 +36,7 @@ clean:
 	make clean -C doc
 	rmdir $(BUILD_DIR) doc/html
 
+	check
+
+
 

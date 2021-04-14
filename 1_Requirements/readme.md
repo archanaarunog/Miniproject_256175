@@ -7,25 +7,16 @@
 * Generally, a system is said to be stable when the poles of the transfer function of the system are located on the left side of the s-plane.
 * Routh-Hurwitz Stability Criterion offers an easy method of predicting the system’s stability without completely solving the characteristic equation.
 
-![image](https://user-images.githubusercontent.com/68493803/114501171-1262ad80-9c47-11eb-9a25-0ed862d76f1c.png)
-https://www.google.com/imgres?imgurl=https%3A%2F%2Fimage.slidesharecdn.com%2Fdeepti-160826033529%2F95%2Frh-criteria-10-638.jpg%3Fcb%3D1472182594&imgrefurl=https%3A%2F%2Fwww.slideshare.net%2Framola007%2Frh-criteria&tbnid=dUUjvijDNzVIDM&vet=10CBMQxiAoAmoXChMIkKCtxrv67wIVAAAAAB0AAAAAEA4..i&docid=jH1Pobx_fGYCxM&w=638&h=479&itg=1&q=routh%20hurwitz%20calculator&hl=en&safe=active&ved=0CBMQxiAoAmoXChMIkKCtxrv67wIVAAAAAB0AAAAAEA4
+![image](https://user-images.githubusercontent.com/68493803/114610307-5ee8d000-9cbd-11eb-94b5-5929d550ed3b.png "Routh-Hurwitz criteria")
 
-https://image.slidesharecdn.com/deepti-160826033529/95/rh-criteria-15-638.jpg?cb=1472182594
+## FEATURES 
 
-https://images.slideplayer.com/27/9233449/slides/slide_16.jpg
-
-https://slideplayer.com/slide/5374822/17/images/5/The+Routh-Hurwitz+Stability+Criterion.jpg
-
-## RESEARCH
-
-
-## COST AND FEATURES 
 
 
 
 ## DEFINING SYSTEM 
-* input the characteristic equation from user
-* menu contains following: display steps, answer directly, description which case 
+* Input the characteristic equation from user
+* Display the Routh array and whether system stable or not along with number of poles on the right half s plane
 
 ## SWOT ANALYSIS 
 
@@ -34,16 +25,20 @@ https://slideplayer.com/slide/5374822/17/images/5/The+Routh-Hurwitz+Stability+Cr
 ## 4W's AND 1'H
 
 
+
 ## DETAIL REQUIREMENTS 
 ### High level requirements
-* The degree of the polynomial
-* The characteristic Equation coefficients 
+|ID|Feature|Status|
+|---|---|---|
+|LR01|Degree of polynomial| Implemented|
+|LR02|Characteristic Equation coefficients | Implemented|
 
 ### Low level requirements
-* Routh-Hurwitz matrix
-* Check sign changes in matrix 
-#### Check for the special cases :
-1. First column element is zero and remaining are non-zero 
-2. Complete row of zeroes 
-
+|ID|Feature|Status|
+|--|---|---|
+|HR01|Routh-Hurwitz matrix| Implemented|
+|HR02|Check for the special cases | Implemented|
+|HR03|First column element zero| Implemented|
+|HR04|Complete row of zeroes | Implemented|
+|HR05|Check sign changes matrix | Implemented|
 

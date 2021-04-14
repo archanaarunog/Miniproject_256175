@@ -28,17 +28,17 @@
 
 ## DETAIL REQUIREMENTS 
 ### High level requirements
-|Feature|Status|
-|---|---|
-|Degree of polynomial| Implemented|
-|Characteristic Equation coefficients | Implemented|
+|ID|Feature|Status|
+|---|---|---|
+|LR01|Degree of polynomial| Implemented|
+|LR02|Characteristic Equation coefficients | Implemented|
 
 ### Low level requirements
-|Feature|Status|
-|---|---|
-|Routh-Hurwitz matrix| Implemented|
-|Check for the special cases | Implemented|
-|First column element zero| Implemented|
-|Complete row of zeroes | Implemented|
-|Check sign changes matrix | Implemented|
+|ID|Feature|Status|
+|--|---|---|
+|HR01|Routh-Hurwitz matrix| Implemented|
+|HR02|Check for the special cases | Implemented|
+|HR03|First column element zero| Implemented|
+|HR04|Complete row of zeroes | Implemented|
+|HR05|Check sign changes matrix | Implemented|
 

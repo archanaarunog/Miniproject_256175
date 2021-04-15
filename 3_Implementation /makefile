@@ -57,8 +57,4 @@ clean:
 	make clean -C doc
 	rmdir $(BUILD_DIR) doc/html
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 940adc565ee9842b4c9e853ca4886e73dd592143

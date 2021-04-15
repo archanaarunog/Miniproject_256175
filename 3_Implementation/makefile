@@ -17,6 +17,7 @@ INCT= Unity
 TEST_SRC = src/function.c\
 test/test_routh_hurwitz.c\
 Unity/unity.c\
+Unity/unity.h
 
 TEST_OUTPUT = $(BUILD_DIR)/Test_$(PROJ_NAME).out
 

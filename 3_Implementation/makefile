@@ -2,7 +2,13 @@ PROJ_NAME = Routh_hurwitz
 
 BUILD_DIR = Build
 
-SRC= src/function.c
+SRC= src/function.c\
+src/charact_eqn.c\
+src/initalize_to_zero.c\
+src/initalize_two_rows.c\
+src/build_routh_array.c\
+src/check_criteria.c\
+ src/print_routh_array.c
 
 INC= -Iinc
 

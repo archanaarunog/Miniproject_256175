@@ -7,7 +7,7 @@
 int main()
 {
     int n, i,j;
-    printf("Enter the degree of the polynomial(3-19) \n");
+    printf("Enter the degree of the polynomial(3-20) \n");
     scanf("%d", &n);
     double char_eqn[n];
     double *ptr_to_charact_eqn = charact_eqn(n, char_eqn);

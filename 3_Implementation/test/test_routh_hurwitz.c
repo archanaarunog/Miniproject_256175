@@ -13,8 +13,6 @@ int main()
 }
 void test_case1(void)
 {
-    double char_eqn[3];
-    charact_eqn(3,char_eqn);
-    TEST_ASSERT_EQUAL(0,initialize_routh_array(2,3,));
+    
 }
 

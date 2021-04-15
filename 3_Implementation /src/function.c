@@ -170,7 +170,7 @@ int routh_hurwitz_function(double *ptr_to_charact_eqn, int size)
     int m = (size / 2) + 1;
     double routh_array[size + 1][m];
     printf("\nROUTH ARRAY SIZE=%dX%d\n", size + 1, m);
-    int i, j;
+    int i, j;   
     double *ptr_to_routh=&routh_array[0][0];
     initialize_routh_array(m, size, ptr_to_routh); 
     initialize_two_rows(m,size, ptr_to_routh, ptr_to_charact_eqn);
@@ -179,3 +179,4 @@ int routh_hurwitz_function(double *ptr_to_charact_eqn, int size)
     check_criteria(m,size,ptr_to_routh);
     return 0;
 }
+

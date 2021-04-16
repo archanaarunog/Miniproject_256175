@@ -51,12 +51,12 @@ $(BUILD_DIR):
 	mkdir $(BUILD_DIR)
 
 coverage:${PROJ_NAME}
-	gcc -fprofile-arcs -ftest-coverage $(SRC) $(INC) -o $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+	gcc -fprofile-arcs -ftest-coverage main.c $(SRC) $(INC) -o $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
 	$(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
 	gcov -a $(SRC)
 
 valgrind:
-	valgrind $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
+	valgrind main.c $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
 
 
 clean:

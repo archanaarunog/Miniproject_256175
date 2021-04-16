@@ -14,8 +14,11 @@
 
 ![image](https://user-images.githubusercontent.com/68493803/114958269-4674e300-9e80-11eb-9ae1-9ff29ba2b377.png)
 
-
 # Special case 1:
+
+![image](https://user-images.githubusercontent.com/68493803/114958521-d155dd80-9e80-11eb-9ac0-5a88ef661a20.png)
+![image](https://user-images.githubusercontent.com/68493803/114958413-92278c80-9e80-11eb-8f7e-cbe2b390e5cc.png)
+
 
 
 ## DEFINING SYSTEM 

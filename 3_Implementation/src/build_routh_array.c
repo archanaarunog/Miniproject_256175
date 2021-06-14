@@ -1,6 +1,6 @@
 #include<function.h>
 /**
- * @brief Find the entire routh_array matrix and checking the special cases 
+ * @brief Find the entire routh_array matrix and check the special cases 
  * case 1: entire row is zero, replace with derivative and proceed 
  * case 2: first element in column zero 
  * @param m Number of columns in routh_array matrix

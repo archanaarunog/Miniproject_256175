@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * @brief Function to store characteristic equation in array
+ * @brief Function to store characteristic equation in array variable 
  * 
  * @param n Degree of the polynomial
  * @param char_eqn Array to store the characteristic equation returned through pointer 
